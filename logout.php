@@ -1,5 +1,11 @@
 <?php
 session_start();
-session_destroy();
-echo json_encode(['success' => true]);
 
+// Détruire la session côté serveur
+session_destroy();
+
+// Réponse JSON pour confirmer la déconnexion
+header('Content-Type: application/json');
+echo json_encode(['success' => true]);
+exit;
+?>
