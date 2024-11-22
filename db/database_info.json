@@ -1,0 +1,7 @@
+{
+    "host" : "localhost",
+    "username" : "projet2024",
+    "password" : "projet2024_password",
+    "database" : "projet2024",
+    "port" : 3306
+}
