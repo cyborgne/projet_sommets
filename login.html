@@ -5,23 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/login.css">
+<body class="bg-light">
     <div class="container">
-        <h2>Connexion</h2>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="login">Login</label>
-                <input type="text" class="form-control" id="login" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Mot de passe</label>
-                <input type="password" class="form-control" id="password" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Se connecter</button>
-        </form>
-        <p>Pas encore inscrit ? <a href="register.html">Inscrivez-vous ici</a></p>
-        <div id="loginError" class="alert alert-danger mt-3" style="display: none;"></div>
+        <div class="d-flex justify-content-center align-items-center vh-100">
+            <form id="loginForm">
+                <div class="card bg-white rounded shadow">
+                    <div class="card-header">
+                    Connexion
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="login">Login</label>
+                            <input type="text" class="form-control" id="login" autocomplete="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Mot de passe</label>
+                            <input type="password" class="form-control" id="password" autocomplete="current-password" required>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Se connecter</button>
+                    </div>
+                </div>
+                <p>Pas encore inscrit ? <a href="register.html">Inscrivez-vous ici</a></p>
+                <div id="loginError" class="alert alert-danger mt-3" style="display: none;"></div>
+            </form>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="js/login.js"></script>
