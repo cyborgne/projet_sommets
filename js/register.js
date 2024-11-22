@@ -1,4 +1,9 @@
 $(document).ready(function() {
+    $('#cancelButton').on('click', function(event) {
+        event.preventDefault();
+        window.location.href = 'index.html';
+    });
+
     $('#registerForm').on('submit', function(event) {
         event.preventDefault();
         var formData = {

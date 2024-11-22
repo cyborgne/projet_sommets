@@ -5,41 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/register.css">
 </head>
-<body>
+<body class="bg-light">
     <div class="container">
-        <h2>Inscription</h2>
-        <form id="registerForm">
-            <div class="form-group">
-                <label for="login">Login</label>
-                <input type="text" class="form-control" id="login" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email">
-            </div>
-            <div class="form-group">
-                <label for="firstName">Prénom</label>
-                <input type="text" class="form-control" id="firstName" required>
-            </div>
-            <div class="form-group">
-                <label for="lastName">Nom</label>
-                <input type="text" class="form-control" id="lastName" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Mot de passe</label>
-                <input type="password" class="form-control" id="password" required>
-            </div>
-            <div class="form-group">
-                <label for="userRoleId">Statut</label>
-                <select class="form-control" id="userRoleId" required>
-                    <option value="1">Éditeur</option>
-                    <option value="2">Non Éditeur</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary">S'inscrire</button>
-        </form>
-        <div id="registerError" class="alert alert-danger mt-3" style="display: none;"></div>
+        <div class="d-flex justify-content-center align-items-center vh-100">
+            <form id="registerForm">
+                <div class="card bg-white rounded shadow">
+                    <div class="card-header">
+                    Inscription
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="login">Login</label>
+                        <input type="text" class="form-control" id="login" autocomplete="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" autocomplete="email" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName">Prénom</label>
+                        <input type="text" class="form-control" id="firstName" autocomplete="given-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Nom</label>
+                        <input type="text" class="form-control" id="lastName" autocomplete="family-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" class="form-control" id="password" autocomplete="new-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userRoleId">Statut</label>
+                        <select class="form-control" id="userRoleId" required>
+                            <option value="1">Éditeur</option>
+                            <option value="2">Non Éditeur</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <button id="cancelButton" class="btn btn-danger">Annuler</button>
+                    <button type="submit" class="btn btn-primary">S'inscrire</button>
+                </div>
+            </form>
+            <div id="registerError" class="alert alert-danger mt-3" style="display: none;"></div>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="js/register.js"></script>
