@@ -3,20 +3,16 @@ $(document).ready(function() {
     
     if (!user) {
         // Redirige vers la page de connexion si l'utilisateur n'est pas authentifié
+        console.log('redicrect vers login : ', user)
         window.location.href = 'login.html';
     } else {
-        // Obtenir le nom de la page actuelle (exemple : "edit.html")
-        var currentPage = window.location.pathname.split('/').pop();
-
         // Redirection basée sur le rôle de l'utilisateur, si nécessaire
-        if (user.userRole == 'editor' && currentPage !== 'edit.html') {
+        if (user.userRole == 'editor') {
+            console.log('redicrect vers edit : ', user)
             window.location.href = 'edit.html';
-        } else if (user.userRole !== 'editor' && currentPage !== 'view.html') {
-            window.location.href = 'view.html';
         } else {
-            // Met à jour les informations affichées sur la page
-            $('#userFirstName').text(user.firstName);
-            $('#userRole').text(user.userRole);
-        }
+            console.log('redicrect vers view : ', user)
+            window.location.href = 'view.html';
+        } 
     }
 });
