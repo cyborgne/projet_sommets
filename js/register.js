@@ -1,3 +1,9 @@
+import {logout} from '/js/logout.js';
+
+// On déconnecte l'utilisateur si il est connecté
+var user = JSON.parse(sessionStorage.getItem('user'));
+if (user) { logout(); }
+
 $(document).ready(function() {
     $('#cancelButton').on('click', function(event) {
         event.preventDefault();
