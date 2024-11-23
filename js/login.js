@@ -5,6 +5,10 @@ var user = JSON.parse(sessionStorage.getItem('user'));
 if (user) { logout(); }
 
 $(document).ready(function() {
+    // Si un login par défaut est défini on prérempli le champ login
+    var defaultLogin = sessionStorage.getItem('defaultLogin')
+    if(defaultLogin) { $('#login').val(defaultLogin) };
+
     $('#loginForm').on('submit', function(event) {
         event.preventDefault();
         var formData = {
@@ -19,7 +23,10 @@ $(document).ready(function() {
             contentType: 'application/json',
             success: function(response) {
                 if (response.success) {
+                    // On stocke les info de l'utilisateur connecté
                     sessionStorage.setItem('user', JSON.stringify(response.user));
+                    // On set de login par défaut avec le login courant
+                    sessionStorage.setItem('defaultLogin', response.user.login);
                     alert('Connexion réussie!');
                     window.location.href = 'index.html';
                 } else {

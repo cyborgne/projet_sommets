@@ -17,7 +17,7 @@ $stmt = $database->prepare("INSERT INTO useraccount (login, email, firstName, la
 $stmt->bind_param('sssssi', $login, $email, $firstName, $lastName, $password, $userRoleId);
 
 if ($stmt->execute()) {
-    echo json_encode(['success' => true]);
+    echo json_encode(['success' => true, 'login' => $login]);
 } else {
     echo json_encode(['success' => false, 'message' => 'Erreur lors de l\'inscription.']);
 }
