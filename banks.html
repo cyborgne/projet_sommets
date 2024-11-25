@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Lien vers le fichier CSS personnalisé -->
     <link rel="stylesheet" href="css/nav_bar.css">
+    <link rel="stylesheet" href="css/banks.css">
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -15,25 +16,18 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand text-white">SOMMETS - Edition de banques d'images</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./edit.html">Retour aux catalogues</a>
-                    </li>
-                    <li class="nav-item">
-                        <button id="logoutBtn" class="btn btn-danger">Log Out</button>
-                    </li>
-                </ul>
-            </div>
         </div>
     </nav>
     
     <div class="container">
-        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#bankModal">Créer une Banque d'Images</button>
-        <div id="bank-list" class="mt-4"></div>
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <button class="btn btn-success mt-3 me-2" id="catalogBtn">Retour aux catalogues</button>
+                <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#bankModal">Créer une Banque d'Images</button>
+            </div>
+            <button class="btn btn-danger mt-3" id="logoutBtn">Log Out</button>
+        </div>
+        <div id="bank-list" class="mt-3 card-grid"></div>
     </div>
 
     <!-- Modal -->

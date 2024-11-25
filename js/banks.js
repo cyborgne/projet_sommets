@@ -10,6 +10,11 @@ $(document).ready(function() {
         window.location.href = '/';
     } 
 
+    // Bouton pour le retour aux catalogues
+    $('#catalogBtn').on('click', function() {
+            window.location.href = 'edit.html';
+    });
+
     // Déconnecte l'utilisateur et redirige vers la racine du site si le
     // bouton se déconnecter est cliqué
     $('#logoutBtn').on('click', function() {
@@ -66,7 +71,7 @@ function loadBanks() {
             let html = '';
             for(var i in data.banks) {
                 var bank = data.banks[i];
-                html += `<div class='card mt-3'>
+                html += `<div class='card mt-3 card-item'>
                             <div class='card-body'>
                                 <strong>${bank.name}</strong>
                                 <p class='card-text'>${bank.description}</p>
