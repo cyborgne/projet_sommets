@@ -28,7 +28,6 @@ $(document).ready(function() {
             contentType: 'application/json',
             success: function(response) {
                 if (response.success) {
-                    alert('Inscription réussie!');
                     sessionStorage.setItem('defaultLogin', response.login);
                     window.location.href = 'login.html';
                 } else {

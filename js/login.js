@@ -27,7 +27,6 @@ $(document).ready(function() {
                     sessionStorage.setItem('user', JSON.stringify(response.user));
                     // On set de login par défaut avec le login courant
                     sessionStorage.setItem('defaultLogin', response.user.login);
-                    alert('Connexion réussie!');
                     window.location.href = 'index.html';
                 } else {
                     $('#loginError').text(response.message).show();
