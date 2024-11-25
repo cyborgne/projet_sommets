@@ -24,7 +24,7 @@ $(document).ready(function() {
         $('#bank-description').val('');
     });
     
-    // FSoumission du formulaire de création de banque d'images
+    // Soumission du formulaire de création de banque d'images
     $('#bank-form').on('submit', function(event) {
         event.preventDefault();
         const name = $('#bank-name').val();
@@ -72,21 +72,21 @@ function loadBanks() {
                                 <p class='card-text'>${bank.description}</p>
                             </div>
                             <div class='card-footer d-flex justify-content-between'>
-                                <button id="edit-${bank.id}"class='btn btn-primary'>Éditer</button>
-                                <button id="suppr-${bank.id}" class='btn btn-danger'>Supprimer</button>
+                                <button id="${bank.id}"class='edit-${bank.id} btn btn-primary'>Éditer</button>
+                                <button id="${bank.id}" class='suppr-${bank.id} btn btn-danger'>Supprimer</button>
                             </div>
                          </div>`;
             }
             $('#bank-list').html(html);
             for(var i in data.banks) {
                 var bank = data.banks[i];
-                $(`#suppr-${bank.id}`).on('click', function(e) { 
+                $(`.edit-${bank.id}`).on('click', function(e) { 
                     e.preventDefault();
-                    deleteBank(bank.id);
+                    window.location.href = "bank.html?id=" + this.id;
                 });
-                $(`#edit-${bank.id}`).on('click', function(e) { 
+                $(`.suppr-${bank.id}`).on('click', function(e) { 
                     e.preventDefault();
-                    window.location.href = `bank.html?id=${bank.id}`;
+                    deleteBank(this.id);
                 });
             }
         }

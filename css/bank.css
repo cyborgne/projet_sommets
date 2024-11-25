@@ -1,0 +1,56 @@
+.form-control:focus.modified {
+    color: var(--bs-body-color);
+    background-color: #e0ffe0;
+    border-color: #28a745;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(162, 226, 175, 0.25);
+}
+.modified {
+    background-color: #e0ffe0;  /* Exemple de fond vert pâle */
+    border: 2px solid #28a745;  /* Bordure verte */
+}
+
+/* Conteneur des images */
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Images de 200px x 200px */
+.image-grid img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    position: relative;
+}
+
+/* Conteneur pour chaque image */
+.image-item {
+    position: relative;
+    display: inline-block;
+}
+
+/* Icône de suppression */
+.delete-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: red;
+    font-weight: bold;
+}
+
+.delete-icon:hover {
+    background-color: red;
+    color: white;
+}
